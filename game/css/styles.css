@@ -52,6 +52,10 @@ a {
 }
 
 /* header/nav */
+.dropbtn {
+    display: none;
+}
+
 header {
     background-color: rgba(444, 12, 23, .1);
     padding: 5px 0 0 0;
@@ -433,14 +437,51 @@ caption {
 
 /* Iphone 6 */
 @media only screen and (max-device-width: 540px){
+    /* header/nav */
+    .dropbtn {
+        display: block;
+        background-color: rgba(444, 12, 23, .1);
+        color: white;
+        padding: 35px;
+        font-size: 50px;
+        border: none;
+        cursor: pointer;
+    }
+    
     /*
-    body {
-        background-color: pink;
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: rgba(444, 12, 23, .1);
     }
     */
-    /* header/nav */
-    header {
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+      
+    .dropdown-content {
+        display: none;
+        position: absolute;
         background-color: rgba(444, 12, 23, .1);
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+      
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    /*
+    .dropdown a:hover {background-color: #ddd;}
+    */
+    .show {display: block;}
+
+    
+    header {
+        background-color: transparent;
         padding: 5px 0 0 0;
         border-bottom: solid white 1px;
         position: sticky;
@@ -463,14 +504,7 @@ caption {
         display: inline-block;
         padding-bottom: 10px;
     }
-
-    nav li a {
-        transition: all 0.2s ease 0s;
-    }
-
-    nav li a:hover {
-        color: orange;
-    }
+    
 
     /*heart logo*/
     .heart {
