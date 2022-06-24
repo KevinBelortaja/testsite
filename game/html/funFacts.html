@@ -24,7 +24,6 @@
     </main>
 
     <script>
-        // Set the date we're counting down to
         var startDate = new Date("Oct 17, 2021 19:30:00").getTime();
         var firstholiday = new Date("Mar 12, 2022 21:00:00").getTime();
         var holiday = new Date("Aug 14, 2022 00:00:00").getTime();
@@ -32,13 +31,10 @@
         var birthdayK = new Date("Oct 3, 2022 00:00:00").getTime();
         var firstseen = new Date("Jul 7, 2021 9:00:00").getTime();
     
-            // Update the count down every 1 second
             var x = setInterval(function() {
     
-            // Get today's date and time
             var now = new Date().getTime();
                 
-            // Find the distance between now and the count down date
             var distance = now - startDate;
             var distance2 = holiday - now;
             var distance3 = birthdayK - birthdayP;
@@ -46,7 +42,6 @@
             var distance5 = now - firstholiday;
             var distance6 = startDate - firstseen;
                 
-            // Time calculations for days, hours, minutes and seconds
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
@@ -57,36 +52,33 @@
 
             var days4 = Math.floor(distance4 / (1000 * 60 * 60 * 24));
             var hours4 = Math.floor((distance4 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes4 = Math.floor((distance4 % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds4 = Math.floor((distance4 % (1000 * 60)) / 1000);
 
             var days5 = Math.floor(distance5 / (1000 * 60 * 60 * 24));
             var hours5 = Math.floor((distance5 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes5 = Math.floor((distance5 % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds5 = Math.floor((distance5 % (1000 * 60)) / 1000);
 
             var days6 = Math.floor(distance6 / (1000 * 60 * 60 * 24));
             var hours6 = Math.floor((distance6 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes6 = Math.floor((distance6 % (1000 * 60 * 60)) / (1000 * 60));
             var seconds6 = Math.floor((distance6 % (1000 * 60)) / 1000);
                 
-            // Output the result in an element with id="statistics"
             document.getElementById("statistics").innerHTML =
             "<p>Zusammen seit:<br>" + days + "d</p><br>" +
-            "<p>Erster Kurzurlaub vor:<br>" + days5 + "d " + hours5 + "h " + minutes5 + "m " + seconds5 + "s</p><br>" +
+            "<p>Erster Kurzurlaub vor:<br>" + days5 + "d " + hours5 + "h</p><br>" +
             "<p>Bis zum Sommerurlaub:<br>" + days2 + "d</p><br>" + 
             "<p>Geburtstagsunterschied:<br>" + days3 + "d</p><br>" + 
-            "<p>Zum ersten mal gesehen seit:<br>" + days4 + "d " + hours4 + "h " + minutes4 + "m " + seconds4 + "s</p><br>" +
+            "<p>Zum ersten mal gesehen seit:<br>" + days4 + "d " + hours4 + "h</p><br>" +
             "<p>Erstes-Kennenlernen-bis-Kuss-Unterschied:<br>" + days6 + "d " + hours6 + "h</p><br>";
     
-            // If the count down is over, write some text 
             if (distance2 < 0) {
                 clearInterval(x);
                 document.getElementById("statistics").innerHTML =
-                "Zusammen seit: " + days + "d<br>" + 
-                "Bis zum Urlaub: Geschafft<br>" + // edit this later!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                "Geburtstagsunterschied: " + days3 + "d<br>" + 
-                "Zum ersten mal gesehen seit: " + days4 + "d " + hours4 + "h " + minutes4 + "m " + seconds4 + "s<br>";
+                "Bis zum Sommerurlaub: Geschafft<br>" +
+                "<p>Zusammen seit:<br>" + days + "d</p><br>" +
+                "<p>Erster Kurzurlaub vor:<br>" + days5 + "d " + hours5 + "h</p><br>" +
+                "Bis zum Sommerurlaub: Geschafft<br>" +
+                "<p>Geburtstagsunterschied:<br>" + days3 + "d</p><br>" + 
+                "<p>Zum ersten mal gesehen seit:<br>" + days4 + "d " + hours4 + "h</p><br>" +
+                "<p>Erstes-Kennenlernen-bis-Kuss-Unterschied:<br>" + days6 + "d " + hours6 + "h</p><br>";
             }
         }, 1000);
         </script>
