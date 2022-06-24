@@ -7,8 +7,9 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
+        <nav class="dropdown">
+            <button  onclick="myFunction()" class="dropbtn">Menü</button>
+            <ul id="myDropdown" class="dropdown-content">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="favWords.html">Lieblingswörter</a></li>
                 <li><a href="funFacts.html">Fun Facts</a></li>
@@ -27,8 +28,27 @@
         </div>
     </main>
 
+    <script>
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+
     <footer>
-        <p><a href="../../index.html">Zurück zum Start</a></p>
+        <p id="backToStart"><a href="../../index.html">Zurück zum Start</a></p>
     </footer>
 </body>
 </html>
